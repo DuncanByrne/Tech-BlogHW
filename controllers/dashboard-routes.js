@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Post } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, (rreq, res)=>{
+router.get("/", withAuth, (req, res)=>{
   Post.findAll({
     where: {
       userId: require.session.userId
@@ -39,7 +39,7 @@ router.get("/edit/:id", withAuth, (req, res) =>{
         post
       });
     }else{
-      res,status(404).render();
+      res.status(404).render();
     }
   })
   .catch(err => {
