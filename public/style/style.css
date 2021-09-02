@@ -1,10 +1,9 @@
 :root {
-  --primary: #ccdad1;
-  --secondary: #9caea9;
-  --tertiary: #788585;
-  --light-dark: #6f6866;
-  --dark: #38302e;
-  --border-radius: 0.3rem;
+  --primary: #fff8f4;
+  --secondary: #fff8f4;
+  --tertiary: #3f7289;
+  --light-dark: #3f7289;
+  --dark: #3f7289;
 }
 
 * {
@@ -15,7 +14,7 @@ body {
   background-color: var(--primary);
   margin: 0;
   padding: 0;
-  font-family: Georgia, "Times New Roman", Times, serif, sans-serif;
+  font-family: abril fatface;
   color: var(--dark);
   line-height: 1.5;
   font-size: 16px;
@@ -115,6 +114,16 @@ input {
   color: var(--primary);
 }
 
+.hero {
+  padding: 3% 4%;
+  background-color: var(--dark);
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 75%;
+}
+
 .app-title {
   font-size: 3rem;
   background-color: var(--primary);
@@ -144,6 +153,16 @@ input {
 
 .list-item:hover {
   background-color: var(--dark);
+}
+
+.footer a {
+  display: inline-block;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  background-color: var(--dark);
+  color: var(--primary);
+  border-radius: var(--border-radius);
+  text-decoration: none;
 }
 
 .card {
@@ -290,7 +309,6 @@ input {
   flex: 0 0 100%;
 }
 
-/* col-sm */
 @media screen and (min-width: 640px) {
   .col-sm-1 {
     flex: 0 0 calc(100% * 1 / 12 - 2%);
@@ -341,7 +359,6 @@ input {
   }
 }
 
-/* col-md */
 @media screen and (min-width: 768px) {
   .col-md-1 {
     flex: 0 0 calc(100% * 1 / 12 - 2%);
@@ -392,7 +409,6 @@ input {
   }
 }
 
-/* col-lg */
 @media screen and (min-width: 992px) {
   .col-lg-1 {
     flex: 0 0 calc(100% * 1 / 12 - 2%);
@@ -443,7 +459,6 @@ input {
   }
 }
 
-/* col-xl */
 @media screen and (min-width: 1200px) {
   .col-xl-1 {
     flex: 0 0 calc(100% * 1 / 12 - 2%);
