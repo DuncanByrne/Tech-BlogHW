@@ -31,22 +31,27 @@
     </div>
   </section>
   {{/if}}
+<div id="respond">
 
-  <form id="new-comment-form" class="card">
-    <div class="card-header">
-      <h3>Add New Comment</h3>
-    </div>
+  <h3>Leave a Comment</h3>
 
-    <div class="card-body">
-      <input type="hidden" name="post-id" value="{{post.id}}" />
+  <form action="submit" method="post" id="commentform">
 
-      <label class="form-label" for="comment-body">Comment</label>
+    <label for="comment_author" class="required">Your name</label>
+    <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
 
-      <textarea name="comment-body" class="form-input"></textarea>
+    <label for="email" class="required">Your email;</label>
+    <input type="email" name="email" id="email" value="" tabindex="2" required="required">
 
-      <button type="submit" class="btn">Submit</button>
-    </div>
+    <label for="comment" class="required">Your message</label>
+    <textarea name="comment" id="comment" rows="10" tabindex="4" required="required"></textarea>
+
+    <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+    <input name="submit" type="submit" value="comment" class="btn" />
+
   </form>
+
+</div>
 </div>
 
 <script src="/javascript/comment.js"></script>

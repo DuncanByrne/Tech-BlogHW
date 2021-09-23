@@ -7,11 +7,55 @@
       </h2>
       <div>
         Posted by {{User.username}} on {{format_date createdAt}}
+        <p></p>
       </div>
     </div>
     <div class="card-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat veniam sit molestiae minus dolorum consequuntur, numquam impedit nam aut non rerum fuga quas, libero dolore vel porro maxime exercitationem facere? Itaque illo eaque nemo? Autem sapiente libero nihil obcaecati provident impedit? Obcaecati repudiandae reiciendis, cumque maiores voluptas magnam doloremque voluptates exercitationem magni quia non et, aperiam nihil animi. Harum autem beatae accusantium voluptatum impedit? Deserunt, nesciunt dicta. Ipsum, in velit assumenda repudiandae delectus illo architecto magnam doloribus beatae laboriosam quaerat recusandae dolor optio iure, officiis, id modi?
+      </p>
+      <div>
+          {{#if loggedIn}}
+          <div class="row mt-2">
+            <div class="col-12">
+                <textarea id="commentSection" rows="3" data-post-id="{{postData}}" data-user-id="{{userId}}" class="form-control" placeholder="Leave a comment!"></textarea>
+                <button class="btn btn-info mt-2 btn-lg" id="commentBtn">Comment</button>
+            </div>
+          </div>
+          {{/if}}
+
+
+
+        <div id="respond">
+        
+          <h3>Leave a Comment</h3>
+        
+          <form action="submit" method="post" id="commentform">
+        
+            <label for="comment_author" class="required">Your name</label>
+            <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+        
+            <label for="email" class="required">Your email;</label>
+            <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+        
+            <label for="comment" class="required">Your message</label>
+            <textarea name="comment" id="comment" rows="10" tabindex="4" required="required"></textarea>
+        
+              <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+              <input name="submit" type="submit" value="comment" class="btn"/>
+        
+          </form>
+        
+        </div>
+        {{!-- <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+      leave a comment!
+      </textarea>
+      </div>
+      <input type="submit" value="Submit" class="btn
+      ">
+      </form> --}}
       {{body}}
     </div>
   </article>
   {{/each}}
 </div>
+<script src="/models/Comment.js"></script>
